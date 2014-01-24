@@ -9,15 +9,15 @@ package 'redis' do
   action :install
 end
 
-directory "/Users/#{node[current_user]}/redis/" do
-  owner "#{node[current_user]}"
+directory "/Users/#{node['current_user']}/redis/" do
+  owner "#{node['current_user']}"
   group "staff"
   action :create
 end
 
 bash "setup redis" do
-  user "#{node[current_user]}"
-  cwd "/Users/#{node[current_user]}"
+  user "#{node['current_user']}"
+  cwd "/Users/#{node['current_user']}"
   creates "~/Library/LaunchAgents/homebrew.mxcl.redis.plist"
   code <<-EOH
   STATUS=0
