@@ -11,7 +11,7 @@ bash "install and setup rvm" do
   creates "/Users/#{node['current_user']}/.rvm/"
   code <<-EOH
   STATUS=0
-  curl -sSL https://get.rvm.io | bash -s stable -- --ignore-dotfiles || STATUS=1
+  curl -sSL https://get.rvm.io | bash -s stable || STATUS=1
   echo "source $HOME/.rvm/scripts/rvm" >> $HOME/.bash_profile
   source $HOME/.bash_profile" || STATUS=1
   rvm install 1.9.2 || STATUS=1
