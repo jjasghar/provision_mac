@@ -22,7 +22,7 @@ bash "setup redis" do
   code <<-EOH
   STATUS=0
   mkdir -p ~/Library/LaunchAgents || STATUS=1
-  cp /usr/local/Cellar/redis/2.4.8/homebrew.mxcl.redis.plist ~/Library/LaunchAgents || STATUS=1
+  cp /usr/local/Cellar/redis/2.8.4/homebrew.mxcl.redis.plist ~/Library/LaunchAgents || STATUS=1
   launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.redis.plist || STATUS=1
   exit $STATUS
   EOH
