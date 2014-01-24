@@ -1,0 +1,10 @@
+name             'provison'
+maintainer       'JJ Asghar'
+maintainer_email 'jj.asghar@peopleadmin.com'
+license          'Apache 2.0'
+description      'provisioning Mac OS X'
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+version          '0.0.1'
+recipe           'homebrew', 'Install Homebrew'
+supports         'mac_os_x'
+supports         'mac_os_x_server'
