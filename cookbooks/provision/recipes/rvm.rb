@@ -7,8 +7,8 @@
 
 
 bash "install and setup rvm" do
-  cwd "~"
-  creates "~/.rvm"
+  cwd "/Users/#{node['current_user']}"
+  creates "/Users/#{node['current_user']}/.rvm/"
   code <<-EOH
   STATUS=0
   echo progress-bar >> ~/.curlrc" || STATUS=1
