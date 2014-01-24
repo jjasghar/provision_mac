@@ -4,8 +4,6 @@
 #
 #
 
-include_recipe 'homebrew::default'
-
 
 package 'mysql' do
   action :install
