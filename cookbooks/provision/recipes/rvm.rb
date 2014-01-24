@@ -11,7 +11,6 @@ bash "install and setup rvm" do
   creates "/Users/#{node['current_user']}/.rvm/"
   code <<-EOH
   STATUS=0
-  echo progress-bar >> ~/.curlrc" || STATUS=1
   curl -sSL https://get.rvm.io | bash -s stable" || STATUS=1
   source ~/.bash_profile" || STATUS=1
   rvm install 1.9.2 || STATUS=1
