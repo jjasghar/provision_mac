@@ -5,7 +5,13 @@
 #
 
 execute "install rvm" do
-  command "curl -sSL https://get.rvm.io | bash -s stable"
+  command "curl -sSL https://get.rvm.io | bash -s stable --ignore-dotfiles"
+  cwd "/Users/#{node['current_user']}"
+  creates "/Users/#{node['current_user']}/.rvm/"
+end
+
+execute "rvm psudo-setup" do
+  command "source $HOME/.rvm/scripts/rvm"
   cwd "/Users/#{node['current_user']}"
   creates "/Users/#{node['current_user']}/.rvm/"
 end
@@ -15,8 +21,6 @@ bash "setup rvm" do
   creates "/Users/#{node['current_user']}/.rvm/im_installed_bitch"
   code <<-EOH
   STATUS=0
-  echo "source $HOME/.rvm/scripts/rvm" >> $HOME/.bash_profile
-  source $HOME/.bash_profile" || STATUS=1
   rvm install 1.9.2 || STATUS=1
   rvm install 2.0.0 || STATUS=1
   rvm install 2.1.0 || STATUS=1
