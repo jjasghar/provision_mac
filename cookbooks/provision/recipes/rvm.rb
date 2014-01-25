@@ -10,7 +10,7 @@ execute "install rvm" do
   creates "/Users/#{node['current_user']}/.rvm/"
 end
 
-bash "setup rvm requirements.....This is going to take a while; go grob some coffee" do
+bash "setup rvm requirements.....This is going to take a while; go grab some coffee, trust me." do
   cwd "/Users/#{node['current_user']}"
   creates "/Users/#{node['current_user']}/.rvm/ive_installed_bitch_requirements"
   code <<-EOH
