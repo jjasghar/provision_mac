@@ -25,7 +25,6 @@ bash "run bundle" do
   cwd "/Users/#{node['current_user']}/repo/"
   code <<-EOH
   STATUS=0
-  gem install bundler || STATUS=1
   bundle || STATUS=1
   exit $STATUS
   EOH
