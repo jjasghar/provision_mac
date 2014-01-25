@@ -11,5 +11,6 @@ include_recipe 'provision::mysql'
 include_recipe 'provision::redis'
 include_recipe 'provision::rvm'
 include_recipe 'provision::repo'
+include_recipe 'provision::iterm'
 
 
