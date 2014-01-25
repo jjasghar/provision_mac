@@ -10,7 +10,7 @@ execute "install rvm" do
   creates "/Users/#{node['current_user']}/.rvm/"
 end
 
-bash "setup rvm requirements" do
+bash "setup rvm requirements.....This is going to take a while; go grob some coffee" do
   cwd "/Users/#{node['current_user']}"
   creates "/Users/#{node['current_user']}/.rvm/ive_installed_bitch_requirements"
   code <<-EOH
@@ -29,6 +29,7 @@ bash "setup rvm 1.9.3" do
     STATUS=0
     source "/Users/#{node['current_user']}/.rvm/scripts/rvm"
     rvm install 1.9.3 || STATUS=1
+    rvm use 1.9.3 || STATUS=1
     rvm --default 1.9.3 || STATUS=1
     touch /Users/#{node['current_user']}/.rvm/ive_installed_bitch_193
     exit $STATUS
