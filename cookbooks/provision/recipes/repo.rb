@@ -12,7 +12,7 @@ directory "/Users/#{node['current_user']}/repo/" do
   action :create
 end
 
-git "/Users/#{node['current_user']}/repo/" do
+git "/Users/#{node['current_user']}/repo/portals" do
   repository "git@github.com:PeopleAdmin/portals.git"
   reference "master"
   user "#{node['current_user']}"
@@ -22,9 +22,11 @@ end
 
 bash "run bundle" do
   user "#{node['current_user']}"
-  cwd "/Users/#{node['current_user']}/repo/"
+  cwd "/Users/#{node['current_user']}/repo/portals"
   code <<-EOH
   STATUS=0
+  source /Users/#{node['current_user']}/.rvm/scripts/rvm
+  gem install bundler
   bundle || STATUS=1
   exit $STATUS
   EOH
