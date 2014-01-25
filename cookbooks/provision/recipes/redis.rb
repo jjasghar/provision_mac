@@ -4,15 +4,8 @@
 #
 #
 
-
 package 'redis' do
   action :install
-end
-
-directory "/Users/#{node['current_user']}/redis/" do
-  owner "#{node['current_user']}"
-  group "staff"
-  action :create
 end
 
 bash "setup redis" do
