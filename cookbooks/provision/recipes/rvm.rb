@@ -10,18 +10,12 @@ execute "install rvm" do
   creates "/Users/#{node['current_user']}/.rvm/"
 end
 
-execute "rvm psudo-setup" do
-  command "source $HOME/.rvm/scripts/rvm"
-  cwd "/Users/#{node['current_user']}"
-  creates "/Users/#{node['current_user']}/.rvm/"
-end
-
 bash "setup rvm" do
   cwd "/Users/#{node['current_user']}"
   creates "/Users/#{node['current_user']}/.rvm/im_installed_bitch"
   code <<-EOH
   STATUS=0
-  rvm install 1.9.2 || STATUS=1
+  source "/Users/#{node['current_user']}/.rvm/scripts/rvm"
   rvm install 2.0.0 || STATUS=1
   rvm install 2.1.0 || STATUS=1
   rvm --default 2.0.0 || STATUS=1
