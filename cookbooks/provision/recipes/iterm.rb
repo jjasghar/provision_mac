@@ -6,7 +6,7 @@
 
 remote_file "/Users/#{node['current_user']}/Downloads/iterm2.zip" do
   owner "#{node['current_user']}"
-  group "#{node['current_user']}"
+  group "staff"
   mode "0644"
   source "http://www.iterm2.com/downloads/stable/iTerm2_v1_0_0.zip"
 end
