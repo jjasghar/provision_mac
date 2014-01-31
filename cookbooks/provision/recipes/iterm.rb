@@ -17,7 +17,7 @@ bash "unzip and copy iTerm2" do
   creates "/Applications/iTerm.app"
   code <<-EOH
   STATUS=0
-  unzip iTerm2_v1_0_0.zip || STATUS=1
+  unzip iterm2.zip || STATUS=1
   mv iTerm.app /Applications/ || STATUS=1
   exit $STATUS
   EOH
