@@ -4,8 +4,9 @@
 #
 #
 
-package 'mysql' do
+package 'mysql55' do
   action :install
+  options("--llvm-gcc")
 end
 
-execute "mysql.server restart"
+execute "brew services restart mysql55"
