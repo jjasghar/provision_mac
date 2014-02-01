@@ -8,8 +8,8 @@ execute "brew install homebrew/versions/mysql55 --llvm-gcc"
 
 bash "set up mysql55 lauch agent" do
   user "#{node['current_user']}"
-  cwd "/User/#{node['current_user']}"
-  creates "/User/#{node['current_user']}/Library/LaunchAgents/homebrew.mxcl.mysql55.plist"
+  cwd "/Users/#{node['current_user']}"
+  creates "/Users/#{node['current_user']}/Library/LaunchAgents/homebrew.mxcl.mysql55.plist"
   code <<-EOH
   STATUS=0
   mkdir -p ~/Library/LaunchAgents/   || STATUS=1
