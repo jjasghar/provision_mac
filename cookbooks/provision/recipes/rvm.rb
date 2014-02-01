@@ -60,4 +60,3 @@ bash "setup rvm 2.1.0" do
   EOH
 end
 
-execute "rvm get stable --auto-dotfiles"
