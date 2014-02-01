@@ -4,9 +4,6 @@
 #
 #
 
-package 'homebrew/versions/mysql55' do
-  action :install
-  options("--llvm-gcc")
-end
+execute "brew install homebrew/versions/mysql55 --llvm-gcc"
 
 execute "brew services restart mysql55"
