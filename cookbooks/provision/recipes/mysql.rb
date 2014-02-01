@@ -4,7 +4,7 @@
 #
 #
 
-package 'mysql55' do
+package 'homebrew/versions/mysql55' do
   action :install
   options("--llvm-gcc")
 end
