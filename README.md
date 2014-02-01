@@ -2,5 +2,5 @@
 
 Simpley said all you need:
 ```bash
-[~] % curl -L http://bit.ly/jj_mac > run.sh && bash run.sh
+[~] % curl -L http://bit.ly/jj_mac > install.sh && bash install.sh
 ```
