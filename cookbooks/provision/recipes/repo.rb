@@ -24,7 +24,7 @@ bash "run bundle" do
   code <<-EOH
     STATUS=0
     source /Users/#{node['current_user']}/.rvm/scripts/rvm || STATUS=1
-    rvm use 2.0.0 --default || STATUS=1
+    rvm --default use 2.0.0 || STATUS=1
     gem install bundler || STATUS=1
     bundle || STATUS=1
     exit $STATUS
