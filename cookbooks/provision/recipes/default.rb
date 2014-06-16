@@ -14,4 +14,7 @@ include_recipe 'provision::repo'
 include_recipe 'provision::iterm'
 include_recipe 'provision::gitx'
 
-
+%w{lunchy bundler}.each do |g|
+  gem_package "#{g}" do
+  action :install
+end
