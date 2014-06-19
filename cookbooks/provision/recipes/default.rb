@@ -16,5 +16,6 @@ include_recipe 'provision::gitx'
 
 %w{lunchy bundler}.each do |g|
   gem_package "#{g}" do
-  action :install
+    action :install
+  end
 end
